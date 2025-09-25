@@ -1,0 +1,287 @@
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+.transparent {
+  background: transparent;
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Section */
+.logoSection {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.logo {
+  border-radius: 50%;
+  border: 2px solid #f8c866;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  border-color: #f5b840;
+  transform: rotate(5deg);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.logoTitleDefault {
+  color: white;
+}
+
+.logoTitleScrolled {
+  color: #6b3fed;
+}
+
+.logoSubtitle {
+  font-size: 0.75rem;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.logoSubtitleDefault {
+  color: #d8b4fe;
+}
+
+.logoSubtitleScrolled {
+  color: #8b3cff;
+}
+
+/* Desktop Menu */
+.desktopMenu {
+  display: none;
+  gap: 2rem;
+}
+
+.menuItem {
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.menuItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(248, 200, 102, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.menuItem:hover::before {
+  left: 100%;
+}
+
+.menuItemDefault {
+  color: white;
+}
+
+.menuItemDefault:hover {
+  color: #f8c866;
+  transform: translateY(-2px);
+}
+
+.menuItemScrolled {
+  color: #6b3fed;
+}
+
+.menuItemScrolled:hover {
+  color: #f8c866;
+  background: rgba(248, 200, 102, 0.1);
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.mobileMenuButtonDefault {
+  color: white;
+}
+
+.mobileMenuButtonScrolled {
+  color: #6b3fed;
+}
+
+.mobileMenuButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(1.1);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  margin-top: 1rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.mobileMenuItem {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  color: #6b3fed;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.mobileMenuItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: #f8c866;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.mobileMenuItem:hover::before {
+  transform: scaleY(1);
+}
+
+.mobileMenuItem:hover {
+  color: #f8c866;
+  background: rgba(248, 200, 102, 0.1);
+  padding-left: 1.5rem;
+}
+
+.mobileMenuItem:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (min-width: 640px) {
+  .logoTitle {
+    font-size: 1.125rem;
+  }
+  
+  .logoSubtitle {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .desktopMenu {
+    display: flex;
+  }
+  
+  .mobileMenuButton {
+    display: none;
+  }
+  
+  .logoTitle {
+    font-size: 1.25rem;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .logoTitle {
+    font-size: 1.375rem;
+  }
+  
+  .logoSubtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .container {
+    padding: 0.5rem;
+  }
+  
+  .logoTitle {
+    font-size: 0.875rem;
+  }
+  
+  .logoSubtitle {
+    font-size: 0.625rem;
+  }
+  
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 479px) {
+  .logoSection {
+    gap: 0.5rem;
+  }
+  
+  .logoTitle {
+    font-size: 0.75rem;
+  }
+  
+  .logoSubtitle {
+    display: none;
+  }
+  
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+}

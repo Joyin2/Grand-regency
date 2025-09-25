@@ -1,0 +1,412 @@
+/* Hero Section Styles */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #6b3fed 0%, #8b3cff 50%, #9f5fff 100%);
+}
+
+/* Video Background */
+.videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+/* Pattern Overlay */
+.patternOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  z-index: 3;
+}
+
+.pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: patternFloat 20s ease-in-out infinite;
+}
+
+@keyframes patternFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Content Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 10;
+}
+
+.content {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+/* Logo */
+.logoContainer {
+  margin-bottom: 1rem;
+}
+
+.heroLogo {
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 3px solid #f8c866;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(248, 200, 102, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Title */
+.title {
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.titleGradient {
+  background: linear-gradient(135deg, #f8c866 0%, #f5b840 50%, #e6a334 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  filter: drop-shadow(0 2px 4px rgba(248, 200, 102, 0.3));
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% { 
+    filter: drop-shadow(0 2px 4px rgba(248, 200, 102, 0.3)) drop-shadow(0 0 15px rgba(248, 200, 102, 0.2));
+  }
+  100% { 
+    filter: drop-shadow(0 2px 4px rgba(248, 200, 102, 0.5)) drop-shadow(0 0 20px rgba(248, 200, 102, 0.4));
+  }
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: clamp(0.875rem, 2.5vw, 1.25rem);
+  margin-bottom: 2rem;
+  color: white;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Buttons */
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 160px;
+  backdrop-filter: blur(10px);
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #f8c866 0%, #f5b840 50%, #e6a334 100%);
+  color: #6b3fed;
+  border: 2px solid #f5b840;
+  box-shadow: 0 10px 25px rgba(248, 200, 102, 0.3);
+}
+
+.primaryButton:hover {
+  border-color: #e6a334;
+  transform: translateY(-2px);
+}
+
+.secondaryButton {
+  border: 2px solid white;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+.secondaryButton:hover {
+  color: #6b3fed;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.buttonText {
+  position: relative;
+  z-index: 2;
+}
+
+.buttonShine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.primaryButton:hover .buttonShine {
+  left: 100%;
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  width: max-content;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scrollIndicator:hover {
+  color: #f8c866;
+  transform: translateX(-50%) scale(1.1);
+}
+
+.scrollIcon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.scrollText {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  display: block;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (min-width: 480px) {
+  .button {
+    font-size: 1rem;
+    padding: 0.875rem 1.75rem;
+    min-width: 180px;
+  }
+}
+
+@media (min-width: 640px) {
+  .buttonContainer {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  
+  .container {
+    padding: 2rem;
+  }
+  
+  .subtitle {
+    margin-bottom: 2.5rem;
+  }
+  
+  .button {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+    min-width: 200px;
+  }
+  
+  .scrollIndicator {
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroLogo {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .logoContainer {
+    margin-bottom: 1.5rem;
+  }
+  
+  .title {
+    margin-bottom: 1.25rem;
+  }
+  
+  .container {
+    padding: 2.5rem;
+  }
+  
+  .scrollIndicator {
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroLogo {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .container {
+    padding: 3rem;
+  }
+  
+  .scrollIndicator {
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 479px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .heroLogo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .button {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.75rem;
+    min-width: 140px;
+  }
+  
+  .buttonContainer {
+    gap: 0.5rem;
+  }
+  
+  .logoContainer {
+    margin-bottom: 0.75rem;
+  }
+  
+  .subtitle {
+    margin-bottom: 1.5rem;
+  }
+  
+  .scrollIndicator {
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .scrollText {
+    font-size: 0.75rem;
+  }
+  
+  .scrollIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+  .pattern,
+  .titleGradient,
+  .scrollIndicator {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .videoOverlay {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .subtitle {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+}
